@@ -42,3 +42,25 @@ exports.getEventType = function(req,res){
         res.send(rows[0]);
     });
 }
+
+exports.isOnCampus = function(req,res){
+    sql.query("SELECT EVENTS.on_campus FROM EVENTS WHERE EVENTS.event_id \'" + req.params.event_id + "\';",
+    function(err,rows,fields){
+        if(err || rows.length == 0){
+            res.send("<p1> Cannot determine whether this event is on campus or not for that event id");
+        }
+        res.send(rows[0]);
+    });
+
+}
+
+exports.getCreationTime = function(req,res){
+    sql.query("SELECT EVENTS.created_at FROM EVENTS WHERE EVENTS.event_id\'" + req.params.event_id + "\';",
+    function(err,rows,fields){
+        if(err || rows.length == 0){
+            res.send("<p1> Cannot find the creation time for that event id");
+        }
+        res.send(rows[0]);
+    });
+    
+}
