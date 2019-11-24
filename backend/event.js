@@ -74,3 +74,6 @@ exports.getEventLocation = function(req,res){
         res.send(rows[0]);
     });
 }
+
+//updating informations***************************************
+
