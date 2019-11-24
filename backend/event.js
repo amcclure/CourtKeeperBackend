@@ -66,7 +66,7 @@ exports.getCreationTime = function(req,res){
 }
 
 exports.getEventLocation = function(req,res){
-    sql.query("SELECT EVENTS.location FROM EVENTS WHERE EVENTS.event_id\'" + req.params.event_id + "\';"，
+    sql.query("SELECT EVENTS.location FROM EVENTS WHERE EVENTS.event_id\'" + req.params.event_id + "\';",
     function(err,rows,fields){
         if(err || rows.length == 0){
             res.send("<p1> Cannot find the event location for that event id");
