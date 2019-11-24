@@ -16,6 +16,7 @@ var devConnect = mysql.createConnection({
     database:'electionBuddy'
   });
 
+  
 //var currentConnection = devConnect;
 var currentConnection = connection;
 
